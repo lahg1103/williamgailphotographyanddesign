@@ -12,13 +12,23 @@
                 <img src="static/logo.png" alt="William Gail Photography and Design Logo">
             </div>
         </a>
-        <button class="call-to-action">
-            <a href="book.html">Book Now</a>
-        </button>
+        <div class="menu-buttons">
+            <button class="call-to-action">
+                <a href="book.html"><strong>Book Now</strong></a>
+            </button>
+            <button id="hamburger">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
     </header>
     <nav>
-        <ul class="animated-link">
-
+        <ul class="nav-link staggerSlideIn">
+            <li style="--i: 0"><a href="about.html">about</a></li>
+            <li style="--i: 1"><a href="gallery.html">gallery</a></li>
+            <li style="--i: 2"><a href="book.html">book</a></li>
+            <li style="--i: 3"><a href="contact.html">contact</a></li>
         </ul>
     </nav>
     <main id="about">
@@ -30,6 +40,10 @@
                     <h3>Home <span class="alt-font">&bullet;</span> About</h3>
                 </div>
             </div>
+        </section>
+        <section>
+            <h2 class="statement"></h2>
+            <p>I'm a New York City native with an absolute passion for photography. I moved to the Rio Grande Valley area and love experiencing the rich culture and exploring the valley through my photography career.</p>
         </section>
     </main>
     <footer>
@@ -50,5 +64,15 @@
             <a href="#top"> back to top &uparrow;</a>
         </div>
     </footer>
+    <script>
+        window.addEventListener("DOMContentLoaded", ()=> {
+            const menuButton = document.getElementById("hamburger");
+            const navigation = document.querySelector("nav");
+                menuButton.addEventListener("click", ()=> {
+                    menuButton.classList.toggle("active");
+                    navigation.classList.toggle("active");
+            })
+        })
+    </script>
 </body>
 </html>

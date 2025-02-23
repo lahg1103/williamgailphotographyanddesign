@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Gail Photography & Design | Book Now</title>
+    <title>William Gail Photography & Design | About</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,26 +12,36 @@
                 <img src="static/logo.png" alt="William Gail Photography and Design Logo">
             </div>
         </a>
-        <button class="call-to-action">
-            <a href="book.html">Book Now</a>
-        </button>
+        <div class="menu-buttons">
+            <button class="call-to-action">
+                <a href="book.html"><strong>Book Now</strong></a>
+            </button>
+            <button id="hamburger">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
     </header>
     <nav>
-        <ul class="animated-link">
-
+        <ul class="nav-link staggerSlideIn">
+            <li style="--i: 0"><a href="about.html">about</a></li>
+            <li style="--i: 1"><a href="gallery.html">gallery</a></li>
+            <li style="--i: 2"><a href="book.html">book</a></li>
+            <li style="--i: 3"><a href="contact.html">contact</a></li>
         </ul>
     </nav>
     <main id="about">
         <section class="gallery">
             <div class="banner">
-                <img src="" alt="">
+                <img src="static/" alt="">
                 <div class="text">
                     <h1>Book Now</h1>
                     <h3>Home <span class="alt-font">&bullet;</span> Book Now</h3>
                 </div>
             </div>
         </section>
-        <section>
+        <section class="content">
             <h2>Let's Connect</h2>
             <p>Ready to leave your mark? Fill out the form, shoot me a quick message via phone or email. To scheudle a consultation or ask questions, fill out the form below.</p>
             <div class="contact">
@@ -46,9 +56,12 @@
                     <a href="mailto:williamgailphotography@gmail.com">williamgailphotography@gmail.com</a>
                 </div>
             </div>
-            <form action="">
-                
-            </form>
+            <form name="contact" method="POST" data-netlify="true">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required />
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+              </form>
         </section>
     </main>
     <footer>
@@ -69,5 +82,15 @@
             <a href="#top"> back to top &uparrow;</a>
         </div>
     </footer>
+    <script>
+        window.addEventListener("DOMContentLoaded", ()=> {
+            const menuButton = document.getElementById("hamburger");
+            const navigation = document.querySelector("nav");
+                menuButton.addEventListener("click", ()=> {
+                    menuButton.classList.toggle("active");
+                    navigation.classList.toggle("active");
+            })
+        })
+    </script>
 </body>
 </html>
