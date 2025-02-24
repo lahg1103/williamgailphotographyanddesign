@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Gail Photography & Design | About</title>
+    <title>William Gail Photography & Design | Book</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,7 +31,7 @@
             <li style="--i: 3"><a href="contact.html">contact</a></li>
         </ul>
     </nav>
-    <main id="about">
+    <main id="book">
         <section class="gallery">
             <div class="banner">
                 <img src="static/juju.jpg" alt="young woman looking pensive to the right sitting on top of a fire exit stair in New York City">
@@ -46,22 +46,28 @@
             <p>Ready to leave your mark? Fill out the form, shoot me a quick message via phone or email. To scheudle a consultation or ask questions, fill out the form below.</p>
             <div class="contact">
                 <div class="phone">
-                    <p class="subtext">
+                    <p class="uppercase">
                         Call or text me
                     </p>
-                    <a href="">+1 570 269-1751</a>    
+                    <a href="tel:+15702691751" class="underline">+1 (570) 269-1751</a>  
                 </div>
                 <div class="email">
-                    <p class="subtext">E-mail me</p>
-                    <a href="mailto:williamgailphotography@gmail.com">williamgailphotography@gmail.com</a>
+                    <p class="uppercase">E-mail me</p>
+                    <a href="mailto:williamgailphotography@gmail.com" class="underline">williamgailphotography@gmail.com</a>
                 </div>
             </div>
-            <form name="contact" method="POST" data-netlify="true">
-                <input type="text" name="name" placeholder="Your Name" required />
-                <input type="email" name="email" placeholder="Your Email" required />
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-              </form>
+
+            <section class="form">
+                <h2>Get In Touch</h2>
+                <p>Please fill out the form below to contact us, and we will get back to you soon.</p>
+                <form name="contact" method="POST" data-netlify="true">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="phone" name="phone" placeholder="Your Phone Number" required></input>
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send</button>
+                  </form>
+            </section>
         </section>
     </main>
     <footer>

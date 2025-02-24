@@ -27,6 +27,9 @@ a, a:visited, a:active {
     color: inherit;
     text-decoration: none;
 }
+img {
+    max-width: 100%;
+}
 
 /* animation */
 
@@ -147,7 +150,7 @@ nav ul{
 nav.active {
     opacity: 1;
     visibility: visible;
-    height: calc(100vh - 6.25rem);
+    height: calc(100vh - 6rem);
     z-index: 999;
 }
 .staggerSlideIn li {
@@ -246,11 +249,43 @@ nav:not(.active) .staggerSlideIn li {
 /* contact */
 .contact {
     border: 1px solid var(--coal);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
+    gap: 1.25rem;
+    text-align: center;
+    margin-block: 2.75rem;
+}
+.contact .uppercase {
+    font-size: 0.85rem;
+}
+.phone, .email {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 .subtext {
     font-family: 'Libre Caslon Text', serif;
     font-weight: 300;
 }
+.underline {
+    text-decoration: underline;
+}
+#book .content {
+    text-align: center;
+}
+.content h2 {
+    margin-block: 1rem;
+}
+.content img {
+    margin-block: 1rem;
+}
+
+/* gallery */
+
 
 /* footer */
 footer {
