@@ -1,6 +1,7 @@
 /* reset */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
 :root {
-    font-size: 16px;
+    font-size: 14px;
     --coal: #000509;
     --mediumgray: #58694C;
     --quartz: #E7E2DF;
@@ -32,8 +33,9 @@ a, a:visited, a:active {
 /* the rest */
 body {
     position: relative;
-    font-family: sans-serif;
+    font-family: 'Hanken Grotesk', sans-serif;
     overflow-x: clip;
+    color: var(--coal);
 }
 header {
     height: 6rem;
@@ -113,6 +115,30 @@ nav {
     align-items: center;
     font-size: 1.75rem;
 }
+
+.nav-link li{
+    margin-block: 0.55rem;
+}
+.nav-link a {
+    position: relative;
+    text-transform: uppercase;
+}
+.nav-link a::after {
+    content: '';
+    position: absolute;
+    background-color: var(--coal);
+    height: 2px;
+    width: 0%;
+    left: 0;
+    bottom: -0.1rem;
+    transition: width 500ms ease-in-out;
+}
+.nav-link a:hover::after {
+    width: 100%;
+}
+.nav-link a:not(:hover)::after {
+    transition: width 500ms ease-in-out;
+}
 nav ul{
     display: flex;
     flex-direction: column;
@@ -142,6 +168,17 @@ nav:not(.active) .staggerSlideIn li {
 }
 .alt-font {
     font-family: serif;
+}
+.hide-sr {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+.hide {
+    opacity: 0;
 }
 .banner {
     width: 100%;
@@ -184,17 +221,51 @@ nav:not(.active) .staggerSlideIn li {
     padding: 1rem;
 }
 /* page specific */
+.gallery {
+    display: grid;
+    height: calc(100% - 6rem);
+    width: 100%;
+    grid-template-rows: 1 auto;
+    grid-template-columns: 1 auto;
+    overflow: clip;
+}
+.slide {
+    grid-row: 1;
+    grid-column: 1;
+    transition: opacity 400ms ease-in-out;
+    min-height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.slide h2 {
+    font-size: 2rem;
+}
+.slide p {
+    font-size: 1.25rem;
+}
 /* contact */
 .contact {
     border: 1px solid var(--coal);
 }
 .subtext {
-    font-family: 
+    font-family: 'Libre Caslon Text', serif;
+    font-weight: 300;
 }
 
 /* footer */
 footer {
     background-color: var(--mediumgray);
+}
+.footer-spread {
+    padding: 0.5rem;
+    display: grid;
+    grid-auto-columns: minmax(0,1fr);
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
+}
+.footer-spread .logo-container {
+    mix-blend-mode: screen;
 }
 .footer-bottom {
     display: flex;

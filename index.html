@@ -7,30 +7,68 @@
 </head>
 <body>
     <header name="top">
-        <h1>Willaim Gail Photography & Design Home</h1>
+        <h1 class="hide-sr">Willaim Gail Photography & Design Home</h1>
         <a href="index.html">
             <div class="logo-container">
                 <img src="static/logo.png" alt="William Gail Photography and Design Logo">
             </div>
         </a>
-        <button class="call-to-action">
-            <a href="book.html">Book Now</a>
-        </button>
+        <div class="menu-buttons">
+            <button class="call-to-action">
+                <a href="book.html"><strong>Book Now</strong></a>
+            </button>
+            <button id="hamburger">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
     </header>
     <nav>
-        <ul class="animated-link">
-
+        <ul class="nav-link staggerSlideIn">
+            <li style="--i: 0"><a href="about.html">about</a></li>
+            <li style="--i: 1"><a href="gallery.html">gallery</a></li>
+            <li style="--i: 2"><a href="book.html">book</a></li>
+            <li style="--i: 3"><a href="contact.html">contact</a></li>
         </ul>
     </nav>
     <main id="home">
         <section class="gallery">
-            <div class="banner">
-                <img src="" alt="">
-
+            <div class="slide banner">
+                <img src="static/ANDREhighschoolfootball.jpg" alt="high school american football photoshoot">
+                <div class="text">
+                    <h2>Tell Your Story</h2>
+                    <p class="subtext"><em>lifestyle</em></p>
+                </div>
+            </div> 
+            <div class="slide banner hide">
+                <img src="static/weddingvows.jpg" alt="bride and groom">
+                <div class="text">
+                    <h2>Wedding Photography</h2>
+                    <p class="subtext"><em>weddings</em></p>
+                </div>
             </div>
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+            <div class="slide banner hide">
+                <img src="static/couple_shot_blackandwhite.JPG" alt="high school american football photoshoot">
+                <div class="text">
+                    <h2>Engagement Photography</h2>
+                    <p class="subtext"><em>weddings</em></p>
+                </div>
+            </div>
+            <div class="slide banner hide">
+                <img src="static/quinceaneraPhotoshoot.jpg" alt="headshot of a young woman facing the camera directly, smiling">
+                <div class="text">
+                    <h2>Quinceañera Photography</h2>
+                    <p class="subtext"><em>portraits</em></p>
+                </div>
+            </div>
+            <div class="slide banner hide">
+                <img src="static/21stbirthday.jpg" alt="headshot of a young woman facing the camera directly, smiling">
+                <div class="text">
+                    <h2>Headshot Photography</h2>
+                    <p class="subtext"><em>portraits</em></p>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
@@ -51,5 +89,44 @@
             <a href="#top"> back to top &uparrow;</a>
         </div>
     </footer>
+    <script>
+        function changeSlideDelay(s, d, sn) {
+            s.forEach((slide, i) => {
+                    setTimeout(() =>{
+                        slide.classList.toggle('hide');
+                        if ((i+1) == sn) {
+                            console.log(slide.alt);
+                            s[0].classList.toggle('hide');
+                        }
+                        else {
+                            s[i+1].classList.toggle('hide');
+                        }
+                }, (i+1) * d);
+                })
+        }
+        function changeSlide(slideshow, delayNum) {
+            
+            let slideNum = slideshow.length;
+
+            changeSlideDelay(slideshow, delayNum, slideNum);
+
+            setInterval(()=>{
+                changeSlideDelay(slideshow, delayNum, slideNum);
+            }, slideNum * delayNum);
+                
+            }
+        
+        window.addEventListener("DOMContentLoaded", ()=> {
+            const menuButton = document.getElementById("hamburger");
+            const navigation = document.querySelector("nav");
+                menuButton.addEventListener("click", ()=> {
+                    menuButton.classList.toggle("active");
+                    navigation.classList.toggle("active");
+            })
+
+            let slideshow = Array.from(document.querySelectorAll('.slide'));
+            changeSlide(slideshow, 4000);
+        })
+    </script>
 </body>
 </html>
