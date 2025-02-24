@@ -251,6 +251,7 @@ nav:not(.active) .staggerSlideIn li {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-self: start;
 }
 .bullet li::marker {
     color: var(--coal);
@@ -381,4 +382,9 @@ footer div {
     background-color: var(--darkergray);
     color: var(--quartz);
     padding: 0.5rem;
+}
+@supports (-webkit-touch-callout: none) {
+    .second-contact {
+        background-attachment: scroll;
+    }
 }
